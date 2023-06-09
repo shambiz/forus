@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+    <style>
+        .registration-box {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        .registration-box h2 {
+            text-align: center;
+        }
+
+        .registration-box label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .registration-box input[type="text"],
+        .registration-box input[type="password"] {
+            width: 100%;
+            padding: 5px;
+            margin-top: 3px;
+        }
+
+        .registration-box input[type="checkbox"] {
+            margin-top: 10px;
+        }
+
+        .registration-box input[type="submit"] {
+            width: 100%;
+            margin-top: 10px;
+            padding: 7px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #thank-you-box {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            display: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-box">
+        <h2>Create an Account</h2>
+        <form id="registration-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+
+            <label for="user-agreement">
+                <input type="checkbox" id="user-agreement" required>
+                I have read and agree to the user agreement.
+            </label>
+
+            <input type="submit" value="Register">
+        </form>
+
+        <div id="thank-you-box">
+            <h2>Thank You</h2>
+            <p>Your registration is complete.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('registration-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('registration-form').style.display = 'none';
+            document.getElementById('thank-you-box').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
